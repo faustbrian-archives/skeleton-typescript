@@ -1,26 +1,26 @@
 name: Format
 
 on:
-    pull_request:
-        paths:
-            - '**.css'
-            - '**.js'
-            - '**.ts'
-            - '**.vue'
+  pull_request:
+    paths:
+      - "**.css"
+      - "**.js"
+      - "**.ts"
+      - "**.vue"
 
 jobs:
-    prettier:
-        runs-on: ubuntu-latest
+  prettier:
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v1
+    steps:
+      - uses: actions/checkout@v1
 
-            - name: Install
-              run: yarn install --frozen-lockfile
+      - name: Install
+        run: npm ci
 
-            - name: Run prettier
-              run: yarn run prettier --write 'src/**/*.{css,js,vue}'
+      - name: Run prettier
+        run: npm run format
 
-            - uses: stefanzweifel/git-auto-commit-action@v3.0.0
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - uses: stefanzweifel/git-auto-commit-action@v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
