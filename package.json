@@ -1,34 +1,34 @@
 {
-	"name": "@konceiver/:package_name",
-	"version": "1.0.0",
-	"description": ":package_description",
-	"repository": "https://github.com/konceiver/:package_name",
-	"license": "MIT",
-	"main": "dist/index",
-	"types": "dist/index",
-	"files": [
-		"dist"
-	],
-	"scripts": {
-		"build": "yarn clean && tsc",
-		"build:watch": "yarn build -w",
-		"clean": "rimraf .coverage dist tmp",
-		"format": "yarn lint && yarn prettier",
-		"lint": "./node_modules/eslint/bin/eslint.js src --ext .ts --fix",
-		"prepublishOnly": "yarn test && yarn build",
-		"prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./**/*.{ts,js,json,md}\"",
-		"test": "jest",
-		"test:watch": "jest --watchAll"
-	},
-	"devDependencies": {
-		"@konceiver/tease": "^1.6.1"
-	},
-	"authors": [
-		{
-			"name": "Brian Faust",
-			"email": "brian@konceiver.dev",
-			"homepage": "https://konceiver.dev",
-			"role": "Developer"
-		}
-	]
+    "name": "@konceiver/:package_name",
+    "version": "1.0.0",
+    "description": ":package_description",
+    "repository": "https://github.com/konceiver/:package_name",
+    "license": "MIT",
+    "main": "dist/index",
+    "types": "dist/index",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "yarn clean && tsc",
+        "build:watch": "yarn build -w",
+        "clean": "rimraf .coverage dist tmp",
+        "format": "yarn lint && yarn prettier",
+        "lint": "./node_modules/eslint/bin/eslint.js src --ext .ts --fix",
+        "prepublishOnly": "yarn test && yarn build",
+        "prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./**/*.{ts,js,json,md}\"",
+        "test": "jest",
+        "test:watch": "jest --watchAll"
+    },
+    "devDependencies": {
+        "@konceiver/tease": "^2.0.0"
+    },
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "brian@konceiver.dev",
+            "homepage": "https://konceiver.dev",
+            "role": "Developer"
+        }
+    ]
 }
